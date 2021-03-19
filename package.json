@@ -1,0 +1,16 @@
+{
+  "name": "twitch-overlay",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "gh": "npm run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "vite": "^2.1.0"
+  },
+  "dependencies": {
+    "curtainsjs": "^8.1.0"
+  }
+}
