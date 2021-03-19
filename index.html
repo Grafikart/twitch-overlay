@@ -9,39 +9,29 @@
   <title>Grafikart : Ecran d'attente</title>
 </head>
 <body>
-  <div class="logo-overlay"></div>
-  <div class="title">
-    Live<strong>Coding</strong><br/>
-    Grafikart
-  </div>
-  <div class="about">
-    <p>
-      Le live va <strong>bientôt</strong> commencer.
-    </p>
-    <pre><span>if</span> <span class="syntax">(</span>!<span>live</span>.online<span class="syntax">) {</span>
+<div class="logo-overlay"></div>
+<div class="title">
+  Live<strong>Coding</strong><br/>
+  Grafikart
+</div>
+<div class="about">
+  <p>
+    Le live va <strong>bientôt</strong> commencer.
+  </p>
+  <pre><span>if</span> <span class="syntax">(</span>!<span>live</span>.online<span class="syntax">) {</span>
   patientez<span>()</span>
 <span class="syntax">}</span></pre>
-    <ul class="setup">
-      <li><strong>Editeur : <span id="ide">PHPStorm</span></strong></li>
-      <li><strong>Thème :</strong> Tokyo night</li>
-      <li><strong>OS :</strong> <span id="os"><strong>Arch Linux</strong> avec l'environnement de bureau i3</span></li>
-      <li><strong>Github :</strong> github.com/Grafikart</li>
-    </ul>
-  </div>
+  <ul class="setup">
+    <li><strong>Editeur : <span id="ide">PHPStorm</span></strong></li>
+    <li><strong>Thème :</strong> Tokyo night</li>
+    <li><strong>OS :</strong> <span id="os"><strong>Arch Linux</strong> avec l'environnement de bureau i3</span></li>
+    <li><strong>Github :</strong> github.com/Grafikart</li>
+  </ul>
+</div>
 
-  <img class="racoon" src="images/racoon.svg" alt="" width="1178" height="1149">
-  <div id="canvas"></div>
-  <div id="background"></div>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <defs>
-      <filter id="goo">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-        <feBlend in="SourceGraphic" in2="goo" />
-      </filter>
-    </defs>
-  </svg>
-  <div id="pool"></div>
+<img class="racoon" src="images/racoon.svg" alt="" width="1178" height="1149">
+<div id="canvas"></div>
+<div id="background"></div>
 <script type="module" src="/main.js"></script>
 </body>
 </html>
