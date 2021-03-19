@@ -17,6 +17,7 @@ function glslPlugin() {
  */
 const config = {
   plugins: [glslPlugin()],
+  base: "",
 };
 
 export default config;
