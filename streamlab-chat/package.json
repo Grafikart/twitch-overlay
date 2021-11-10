@@ -1,0 +1,23 @@
+{
+  "name": "streamlab-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "browser-sync start -s --no-open --no-online --no-ui --port=3001 -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grafikart/StreamlabCSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grafikart/StreamlabCSS/issues"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.7"
+  },
+  "homepage": "https://github.com/Grafikart/StreamlabCSS#readme"
+}
