@@ -124,12 +124,12 @@ body {
   right: 10px;
   width: 60px;
   height: 60px;
-  background: url(images/exclamation.gif) top center / 60px 60px;
+  background: url(https://raw.githubusercontent.com/Grafikart/twitch-overlay/master/streamlab-chat/images/exclamation.gif) top center / 60px 60px;
   content:'';
   animation: slideIn 3s .2s both linear;
 }
 .message.interrogation::after {
-  background-image: url(images/interrogation.gif);
+  background-image: url(https://raw.githubusercontent.com/Grafikart/twitch-overlay/master/streamlab-chat/images/interrogation.gif);
 }
 
 @keyframes slideIn {
