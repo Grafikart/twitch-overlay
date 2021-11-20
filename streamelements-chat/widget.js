@@ -79,7 +79,7 @@ window.addEventListener('onEventReceived', function (obj) {
                 description: "Verified"
               }],
               channel: channelName,
-              text: `Howdy! My name is Bill and I am here to serve Kappa`,
+              text: `Howdy My name is Bill and I am here to serve Kappa`,
               isAction: !1,
               emotes: [{
                 type: "twitch",
