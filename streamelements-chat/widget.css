@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:600);
+
+:root {
+  --color: #c9d0ed;
+  --blue: #6183bb;
+  --red: #db4b4b;
+  --purple: #bb9af7;
+  --pink: #ec9af7;
+  --lightblue: #2ac3de;
+  --green: #41a6b5;
+  --lightgreen: #9ece6a;
+  --darkred: #963c47;
+  --gold: #e0af68;
+  --darkorange: #bd5a2d;
+  --gazon: #41a6b5;
+  --teal: #2ac3de;
+  --brown: #bd5a2d;
+  --fluogreen: #73daca;
+  --orange: #ff9e64;
+  --black: #727ca0;
+  --white: #eeeef0;
+  --blood: #703438;
+  --grey: #9aa5ce;
+  --yellow: #e0af68;
+  --cyan: #0db9d7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+body {
+  text-shadow: 0 0 1px #000, 0 0 2px #000;
+  font-family: "Inter";
+  font-weight: 600;
+  color: var(--color);
+}
+
+#chatbox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.message {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: .5rem 0.8rem;
+  background-color: var(--bg);
+  background: linear-gradient(
+          to bottom,
+          rgba(26, 27, 38, 0.9),
+          rgba(26, 27, 38, 1)
+  );
+  border-radius: 5px;
+  animation: messageEnter 0.3s ease forwards;
+}
+
+.meta,
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.badges {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+}
+
+.badges img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.name {
+  color: var(--color);
+}
+
+.emote {
+  display: inline-block;
+  vertical-align: middle;
+  width: 23px;
+  height: 23px;
+  background-image: none !important;
+  object-fit: contain;
+}
+
+@keyframes messageEnter {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+.message.exclamation::after,
+.message.interrogation::after {
+  position: absolute;
+  top: -55px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  background: url(https://raw.githubusercontent.com/Grafikart/twitch-overlay/master/streamelements-chat/images/exclamation.gif) top center / 60px 60px;
+  content:'';
+  animation: slideIn 3s .2s both linear;
+}
+.message.interrogation::after {
+  background-image: url(https://raw.githubusercontent.com/Grafikart/twitch-overlay/master/streamelements-chat/images/interrogation.gif);
+}
+
+@keyframes slideIn {
+  0% {
+    top: 0;
+    height: 0;
+  }
+  10% {
+    top: -55px;
+    height: 60px;
+  }
+  90% {
+    top: -55px;
+    height: 60px;
+  }
+  100% {
+    top: 0;
+    height: 0;
+  }
+}
