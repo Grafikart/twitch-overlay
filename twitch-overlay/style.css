@@ -1,52 +1,77 @@
-* {
-  box-sizing: border-box;
-}
-
-ul , li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+@import "./reset.css";
 
 :root {
-  --color: #121C42;
-  --contrast: #3E5DEB;
-  --light: #6E79A5;
+  --color: #d4dcff;
+  --contrast: #5396e7;
+  --light: #8491c7;
 }
 
+html,
 body {
-  font-family: Montserrat, sans-serif;
-  margin: 0;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #fff;
-  padding: 100px 110px;
-  color: var(--color);
   font-size: 45px;
 }
 
-strong,
+body {
+  font-family: Roboto, sans-serif;
+  overflow: hidden;
+  padding: 100px 110px;
+  color: var(--light);
+  line-height: 1.5;
+  text-shadow: 0 0 0.1em currentColor;
+}
+
 pre {
+  font-family: Roboto Mono, monospace;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+strong {
   color: var(--color);
 }
 
+pre span {
+  color: var(--contrast);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0 110px;
+}
+
 .title {
+  color: var(--color);
+  font-family: Montserrat, sans-serif;
+  isolation: isolate;
+  z-index: 2;
   font-weight: bold;
   font-size: 120px;
   line-height: 1.1;
 }
 
-.title strong {
-  color: var(--contrast);
+.setup {
+  font-size: 0.9rem;
 }
 
-.logo-overlay {
-  background: url(./images/logo-overlay.svg) top left no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.title strong,
+pre span {
+  color: var(--contrast);
 }
 
 .racoon {
@@ -55,8 +80,7 @@ pre {
   right: -90px;
 }
 
-#background,
-canvas {
+iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -65,41 +89,7 @@ canvas {
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-
-canvas {
   z-index: -1;
-  opacity: 0.1;
-}
-
-.about {
-  display: grid;
-  grid-gap: 50px;
-  font-family: Roboto, sans-serif;
-  position: absolute;
-  bottom: 110px;
-  left: 110px;
-}
-
-.setup strong {
-  font-weight: bold;
-}
-
-pre {
-  font-family: Roboto Mono, monospace;
-  padding: 0;
-  margin: 0;
-}
-
-pre span {
-  color: var(--contrast);
-}
-
-pre .syntax {
-  color: var(--light);
-}
-
-p {
-  margin: 0;
-  padding: 0;
+  border: none;
+  transform: scale(1.1);
 }

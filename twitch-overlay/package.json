@@ -8,11 +8,9 @@
     "gh": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
+    "@types/youtube": "^0.0.46",
     "gh-pages": "^3.2.3",
     "prettier": "^2.4.1",
     "vite": "^2.6.14"
-  },
-  "dependencies": {
-    "curtainsjs": "^8.1.3"
   }
 }

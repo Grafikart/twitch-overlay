@@ -1,7 +1,14 @@
 import "./style.css";
-import { Curtains, Plane } from "curtainsjs";
-import vertexShader from "./shaders/vertex.glsl";
-import fragmentShader from "./shaders/fragment.glsl";
+
+// On extrait les phrase depuis les paramètres de l'URL
+const url = new URL(window.location.href);
+const injectableParams = ["os", "ide", "baseline", "title"];
+injectableParams.forEach((paramName) => {
+  const paramValue = url.searchParams.get(paramName);
+  if (paramValue) {
+    document.getElementById(paramName).innerHTML = microMarkdown(paramValue);
+  }
+});
 
 /**
  * Implémentation naïve du markdown
@@ -13,34 +20,37 @@ function microMarkdown(str) {
   return str.replace(/\*\*([^*]*)\*\*?/g, "<strong>$1</strong>");
 }
 
-// On extrait les phrase depuis les paramètres de l'URL
-const url = new URL(window.location.href);
-const injectableParams = ["os", "ide", "baseline"];
-injectableParams.forEach((paramName) => {
-  const paramValue = url.searchParams.get(paramName);
-  if (paramValue) {
-    document.getElementById(paramName).innerHTML = microMarkdown(paramValue);
-  }
-});
-
-// On charge curtains pour l'effet "LavaLamp"
-const curtains = new Curtains({
-  container: document.body,
-  watchScroll: false,
-  pixelRatio: Math.min(2, window.devicePixelRatio),
-});
-const plane = new Plane(curtains, document.getElementById("background"), {
-  vertexShader,
-  fragmentShader,
-  uniforms: {
-    uTime: {
-      name: "uTime",
-      type: "1f",
-      value: 0,
+window.onYouTubePlayerAPIReady = () => {
+  new YT.Player("ytplayer", {
+    width: "100%",
+    height: "100%",
+    videoId: url.searchParams.get("yt") || "Jox6R5-rIH0",
+    host: "https://www.youtube-nocookie.com",
+    playerVars: {
+      origin: window.location.host,
     },
-  },
-});
-const startTime = Date.now();
-plane.onRender(() => {
-  plane.uniforms.uTime.value = Date.now() - startTime;
-});
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange,
+    },
+  });
+};
+
+/**
+ * @param {YT.PlayerEvent} event
+ */
+function onPlayerReady(event) {
+  event.target.playVideo();
+  event.target.setPlaybackRate(0.7);
+  event.target.mute();
+}
+
+/**
+ * @param {YT.OnStateChangeEvent} event
+ */
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.ENDED) {
+    event.target.seekTo(0, true);
+    event.target.playVideo();
+  }
+}
