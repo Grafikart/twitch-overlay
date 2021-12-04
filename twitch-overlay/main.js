@@ -3,6 +3,7 @@ import "./style.css";
 // On extrait les phrase depuis les paramètres de l'URL
 const url = new URL(window.location.href);
 const injectableParams = ["os", "ide", "baseline", "title"];
+const musicCredit = document.querySelector('#musiccredit')
 injectableParams.forEach((paramName) => {
   const paramValue = url.searchParams.get(paramName);
   if (paramValue) {
@@ -34,6 +35,32 @@ window.onYouTubePlayerAPIReady = () => {
       onStateChange: onPlayerStateChange,
     },
   });
+
+  const volume = parseInt(url.searchParams.get("volume") || '100', 10)
+  if (volume === 0) {
+    return
+  }
+
+  new YT.Player('ytmusic', {
+    videoId: '5yx6BWlEVcY',
+    host: "https://www.youtube-nocookie.com",
+    playerVars: {
+      origin: window.location.host,
+    },
+    events: {
+      onReady: (e) => {
+        e.target.setVolume(volume);
+        e.target.playVideo()
+      },
+      onStateChange: (e) => {
+        if (e.data === YT.PlayerState.PLAYING) {
+          musicCredit.style.removeProperty('display');
+        } else {
+          musicCredit.style.setProperty('display', 'none');
+        }
+      }
+    },
+  })
 };
 
 /**
