@@ -91,6 +91,10 @@ body {
   color: var(--color);
 }
 
+.content {
+  word-break: break-all;
+}
+
 .emote {
   display: inline-block;
   vertical-align: middle;
