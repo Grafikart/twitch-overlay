@@ -1,0 +1,9 @@
+{
+    "accessToken": "",
+    "refreshToken": "",
+    "scope": [
+        "channel:read:redemptions"
+    ],
+    "expiresIn": 0,
+    "obtainmentTimestamp": 0
+}

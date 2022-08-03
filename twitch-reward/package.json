@@ -1,0 +1,23 @@
+{
+  "name": "twitch-reward",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon src/main.ts",
+    "start": "NODE_ENV=prod tsx src/main.ts"
+  },
+  "nodemonConfig": {
+    "exec": "tsx",
+    "ext": "ts,tsx"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.3",
+    "nodemon": "^2.0.19",
+    "tsx": "^3.8.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@twurple/auth": "^5.1.8",
+    "@twurple/pubsub": "^5.1.8",
+    "dotenv": "^16.0.1"
+  }
+}
