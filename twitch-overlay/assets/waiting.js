@@ -1,4 +1,4 @@
-import "./style.css";
+import "./waiting.css";
 
 // On extrait les phrase depuis les paramètres de l'URL
 const url = new URL(window.location.href);
