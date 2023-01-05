@@ -1,8 +1,9 @@
+import "./layout.scss";
 import "./waiting.css";
 
 // On extrait les phrase depuis les paramètres de l'URL
 const url = new URL(window.location.href);
-const injectableParams = ["os", "ide", "baseline", "title"];
+const injectableParams = ["baseline", "title"];
 const musicCredit = document.querySelector('#musiccredit')
 injectableParams.forEach((paramName) => {
   const paramValue = url.searchParams.get(paramName);
@@ -22,20 +23,6 @@ function microMarkdown(str) {
 }
 
 window.onYouTubePlayerAPIReady = () => {
-  new YT.Player("ytplayer", {
-    width: "100%",
-    height: "100%",
-    videoId: url.searchParams.get("yt") || "Jox6R5-rIH0",
-    host: "https://www.youtube-nocookie.com",
-    playerVars: {
-      origin: window.location.host,
-    },
-    events: {
-      onReady: onPlayerReady,
-      onStateChange: onPlayerStateChange,
-    },
-  });
-
   const volume = parseInt(url.searchParams.get("volume") || '100', 10)
   if (volume === 0) {
     return
@@ -54,9 +41,9 @@ window.onYouTubePlayerAPIReady = () => {
       },
       onStateChange: (e) => {
         if (e.data === YT.PlayerState.PLAYING) {
-          musicCredit.style.removeProperty('display');
+          musicCredit?.style.removeProperty('display');
         } else {
-          musicCredit.style.setProperty('display', 'none');
+          musicCredit?.style.setProperty('display', 'none');
         }
       }
     },

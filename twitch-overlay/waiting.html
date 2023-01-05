@@ -5,45 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&family=Roboto+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <title>Grafikart : Ecran d'attente</title>
   </head>
 
   <body>
-    <div class="content">
-      <div class="title" id="title">
-        Live<strong>Coding</strong><br />
-        Grafikart
-      </div>
-      <p id="baseline">Le live va <strong>bientôt</strong> commencer.</p>
-      <pre><span>while</span> <span class="syntax">(</span>!<span>live</span>.online<span class="syntax">) {</span>
-  patientez<span>()</span>
-<span class="syntax">}</span></pre>
-      <ul class="setup">
-        <li><strong>Editeur :</strong> <span id="ide">PHPStorm</span></li>
-        <li><strong>Thème :</strong> Tokyo night</li>
-        <li>
-          <strong>OS :</strong>
-          <span id="os"
-            ><strong>Arch Linux</strong> avec l'environnement de bureau i3</span
-          >
-        </li>
-        <li><strong>Github :</strong> github.com/Grafikart</li>
-        <li id="musiccredit" style="display: none;"><strong>Musique :</strong> Chillhop Music</li>
-      </ul>
+
+  <div class="grid">
+  </div>
+  <div class="blobs blobs-shadow">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+  <div class="blobs">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <div class="blobs blobs-top-shadow">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <div class="blobs blobs-top">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <div class="content">
+    <div class="title" id="title">
+      Live<strong>Coding</strong><br />
+      Grafikart
     </div>
+    <p id="baseline">Le live va <strong>bientôt</strong> commencer.</p>
+  </div>
 
-    <img
-      class="racoon"
-      src="images/racoon.svg"
-      alt=""
-      width="1178"
-      height="1149"
-    />
+  <div class="shapes">
+    <svg width="953" height="952" viewBox="0 0 953 952" fill="none" xmlns="http://www.w3.org/2000/svg" class="circle-bottom circle">
+      <path d="M892.243 421.5C922.342 421.5 946.743 445.9 946.743 476C946.743 735.704 736.211 946.235 476.508 946.235C446.408 946.235 422.008 921.834 422.008 891.735C422.008 861.635 446.408 837.235 476.508 837.235C676.012 837.235 837.743 675.505 837.743 476C837.743 445.9 862.143 421.5 892.243 421.5Z" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg" class="triangle">
+      <path d="M2.94959 107.378L31.3993 4.38403L106.37 80.5192L2.94959 107.378Z" fill="var(--purple)"/>
+    </svg>
+    <svg width="127" height="128" viewBox="0 0 127 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="square square-top">
+      <rect x="2.82509" y="66.546" width="86.0398" height="86.0398" transform="rotate(-47.7825 2.82509 66.546)"/>
+    </svg>
+  </div>
 
-    <div id="ytplayer"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -7" result="goo" />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </defs>
+  </svg>
+
     <div id="ytmusic" class="hidden"></div>
     <script type="module" src="./assets/waiting.js"></script>
     <script defer src="https://www.youtube.com/player_api"></script>
