@@ -26,6 +26,7 @@ ul li + li {
 }
 
 .blobs {
+  display: none;
   --scale: 1;
   color: var(--grafikart);
   position: absolute;
