@@ -4,6 +4,7 @@ const hideCommands = true;
 const limit = 20
 const chatBox = document.querySelector('#chatbox')
 const colors = {
+  /*
   "#0000ff": "blue",
   "#ff0000": "red",
   "#8a2be2": "purple",
@@ -26,6 +27,7 @@ const colors = {
   "#ffff00": "yellow",
   "#00ffff": "cyan",
   "#8A2BE2": "purple",
+  */
 };
 
 /**
@@ -96,7 +98,7 @@ window.addEventListener('onEventReceived', function (obj) {
               }],
               msgId: "43285909-412c-4eee-b80d-89f72ba53142"
             },
-            renderedText: `Howdy! My name is Bill and I am here to serve <img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 1x, https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 2x, https://static-cdn.jtvnw.net/emoticons/v1/25/3.0 4x" title="Kappa" class="emote">`
+            renderedText: `C'est dommage le message qui cut les mots quand ça retourne à la ligne <img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 1x, https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 2x, https://static-cdn.jtvnw.net/emoticons/v1/25/3.0 4x" title="Kappa" class="emote">`
           }
         }
       });

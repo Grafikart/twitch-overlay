@@ -38,7 +38,7 @@ body {
 }
 
 body {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   color: var(--color);
 }
@@ -59,12 +59,12 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  padding: .5rem 0.8rem;
+  padding: .5rem .8rem;
   background: #FFF;
   margin-left: 5px;
   box-shadow: -5px 5px 0 0 #000;
   animation: messageEnter 0.3s ease forwards;
-  max-width: 100%;
+  max-width: 100vw;
 }
 
 .meta,
@@ -94,7 +94,8 @@ body {
 }
 
 .content {
-  word-break: break-all;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .emote {
